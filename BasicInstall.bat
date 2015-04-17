@@ -3,13 +3,11 @@
 @setlocal enableextensions
 @cd /d "%~dp0"
 
-echo %CD%
-
 echo -------------------
 echo    Basic Install
 echo -------------------
 
-powershell Set-ExecutionPolicy RemoteSigned >nul
+powershell Set-ExecutionPolicy Unrestricted >nul
 if not errorlevel 1 goto psok
 powershell -h >nul 2>&1
 if errorlevel 1 goto nops
