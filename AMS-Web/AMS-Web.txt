@@ -1,0 +1,8 @@
+cinst googlechrome
+cinst dotnet4.5.2
+cinst visualstudio2013ultimate
+cinst skype
+cinst 7zip.install
+cinst sourcetree
+cinst webstorm
+cinst fiddler
