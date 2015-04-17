@@ -13,5 +13,5 @@ cinst boxstarter -y
 # Set Default Browser to IE. This is required for running boxstarter packages.
 Set-DefaultBrowserToIE
 
-START http://boxstarter.org/package/nr/url?
+START http://boxstarter.org/package/nr/url?https://raw.githubusercontent.com/bcraig83/EnvSetup/master/BasicInstall.txt
 
