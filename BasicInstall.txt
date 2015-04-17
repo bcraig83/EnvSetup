@@ -1,14 +1,9 @@
-Write-Host "Setting Powershell Execution Policy to Unrestricted" -ForegroundColor Yellow
 Update-ExecutionPolicy Unrestricted
 
-Write-Host "Setting windows explorer options..." -ForegroundColor Yellow
 Set-WindowsExplorerOptions -EnableShowHiddenFilesFoldersDrives -EnableShowProtectedOSFiles -EnableShowFileExtensions -EnableShowFullPathInTitleBar
 
-Write-Host "Setting taskbar options..." -ForegroundColor Yellow
 Set-TaskbarOptions -Size Small -Lock
 
-Write-Host "Enable Remote Desktop" -ForegroundColor Yellow
 Enable-RemoteDesktop
 
-Write-Host "Run windows updates." -ForegroundColor Yellow
 Install-WindowsUpdate -AcceptEula
