@@ -20,6 +20,13 @@ EXIT
 :psok
 powershell -File BasicInstall.ps1
 pause
+
+echo -------------------
+echo   Project Install
+echo -------------------
+
+powershell -File InstallProjectApps.ps1
+pause
 EXIT
 
 :nops
