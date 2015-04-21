@@ -1,9 +1,4 @@
-Update-ExecutionPolicy Unrestricted
-
-Set-WindowsExplorerOptions -EnableShowHiddenFilesFoldersDrives -EnableShowProtectedOSFiles -EnableShowFileExtensions -EnableShowFullPathInTitleBar
-
-Set-TaskbarOptions -Size Small -Lock
-
-Enable-RemoteDesktop
-
-Install-WindowsUpdate -AcceptEula
+# Call install script
+& .\Common\Install-CommonOptions.ps1
+# TODO prompt user?
+& .\Common\Install-ProjectApps.ps1
