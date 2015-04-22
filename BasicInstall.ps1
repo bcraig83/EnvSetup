@@ -5,7 +5,7 @@ write-host '###################'
 write-host ' Loading functions '
 write-host '###################'
 
-$modules = Get-ChildItem .\functions -Filter *.psm1
+$modules = Get-ChildItem .\Common\functions -Filter *.psm1
 $modules | ForEach-Object { 
 	write-host ' Loading function: ' $_.Name
 	import-module -name  $_.FullName 
