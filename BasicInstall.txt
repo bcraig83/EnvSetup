@@ -1,4 +1,14 @@
+write-host '###################'
+write-host ' Loading functions '
+write-host '###################'
+
+$modules = Get-ChildItem .\Common\functions -Filter *.ps1
+$modules | ForEach-Object { 
+	write-host ' Loading function: ' $_.Name
+	import-module -name  $_.FullName 
+}
+
 # Call install script
 & .\Common\Install-CommonOptions.ps1
 # TODO prompt user?
-& .\Common\Install-ProjectApps.ps1
+#& .\Common\Install-ProjectApps.ps1
