@@ -1,16 +1,10 @@
 Update-ExecutionPolicy Unrestricted
 
-# Load custom functions .\functions
+# Load custom functions .\Common\functions
+. .\Common\functions\Install-CommonFunctions.ps1
 
-write-host '###################'
-write-host ' Loading functions '
-write-host '###################'
-
-$modules = Get-ChildItem .\functions -Filter *.psm1
-$modules | ForEach-Object { 
-	write-host ' Loading function: ' $_.Name
-	import-module -name  $_.FullName 
-}
+#Load Boxstarter.Chocolatey
+Import-Module Boxstarter.Chocolatey
 
 #Need to exclude Common directory from list
 $arr = Get-ChildItem -Path $PSScriptRoot -Directory |  
@@ -31,4 +25,12 @@ Write-Host $projectName
 #
 # This will allow Install-Project-Package.ps1 to cater for specific
 # project configurations for each project if needed
-& $projectName\Install-Project-Package.ps1
+& $projectName\Install-ProjectPackage.ps1
+
+# Clean up after script
+Remove-Module Boxstarter*
+
+# Remove custom functions .\Common\functions
+# as there seem to be issues if functions are loaded multiple times
+. .\Common\functions\Remove-CommonFunctions.ps1
+

@@ -18,14 +18,7 @@ pause
 EXIT
 
 :psok
-powershell -File BasicInstall.ps1
-pause
-
-echo -------------------
-echo   Project Install
-echo -------------------
-
-powershell -File InstallProjectApps.ps1
+powershell -File Install-EnvSetup.ps1
 pause
 EXIT
 

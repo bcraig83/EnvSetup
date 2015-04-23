@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<package>
+  <metadata>
+    <id>CommonBrowserAndStoragePackage</id>
+    <version>1.0.0</version>
+    <authors>Stephen</authors>
+    <owners>Stephen</owners>
+    <description>Collection of common Browser And Storage utility applications</description>
+    <tags>Boxstarter</tags>
+  </metadata>
+</package>
