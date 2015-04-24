@@ -3,6 +3,9 @@ Update-ExecutionPolicy Unrestricted
 # Set Default Browser to IE. This is required for running boxstarter packages.
 Set-DefaultBrowserToIE
 
+#Load Boxstarter.Chocolatey
+Import-Module Boxstarter.Chocolatey
+
 #Call boxstarter so that you can enter OS password for your account
 boxstarter
 
