@@ -1,15 +1,18 @@
+#Load Boxstarter.Chocolatey
+Import-Module Boxstarter.Chocolatey
+
 Update-ExecutionPolicy Unrestricted
+
+Disable-UAC
+
+# Load custom functions .\Common\functions
+. .\Common\functions\Install-CommonFunctions.ps1
 
 # Set Default Browser to IE. This is required for running boxstarter packages.
 Set-DefaultBrowserToIE
 
-#Load Boxstarter.Chocolatey
-Import-Module Boxstarter.Chocolatey
-
 #Call boxstarter so that you can enter OS password for your account
 boxstarter
-
-Disable-UAC
 
 $message  = 'We are now going to install some common windows features and tools. You will be asked to accept or reject specific installation packages'
 $question = 'Are you sure you want to proceed?'
@@ -40,3 +43,10 @@ if ($decision -eq 0) {
 } else {
   Write-Host 'Cancelled'
 }
+
+# Clean up after script
+Remove-Module Boxstarter*
+
+# Remove custom functions .\Common\functions
+# as there seem to be issues if functions are loaded multiple times
+. .\Common\functions\Remove-CommonFunctions.ps1

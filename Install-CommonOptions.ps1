@@ -1,10 +1,10 @@
+#Load Boxstarter.Chocolatey
+Import-Module Boxstarter.Chocolatey
+
 Update-ExecutionPolicy Unrestricted
 
 # Load custom functions .\Common\functions
 . .\Common\functions\Install-CommonFunctions.ps1
-
-#Load Boxstarter.Chocolatey
-Import-Module Boxstarter.Chocolatey
 	
 write-host $pwd	
 # Get options in the Common folder
