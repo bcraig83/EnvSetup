@@ -1,6 +1,11 @@
-#Get project directory name
-$projectPackage = $(Get-Location | Split-Path -Leaf)
-$packageInstallText = $projectPackage + ' software package'
+#NOTE The below do not get the correct location 
+# They get base directory name from which this script was called
+#$projectPackage = $(Get-Location | Split-Path -Leaf)
+#$packageInstallText = $projectPackage + ' software package'
+
+#Full path
+#$projectPackage = Split-Path $script:MyInvocation.MyCommand.Path
+$projectPackage = Split-Path $script:MyInvocation.MyCommand.Path | Split-Path -Leaf
 
 if (Install-NeededFor $packageInstallText) 
 {
