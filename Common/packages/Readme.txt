@@ -1,0 +1,1 @@
+This folder can contain either .nupkg or .ps1 file which the user will be prompted whether to install or not

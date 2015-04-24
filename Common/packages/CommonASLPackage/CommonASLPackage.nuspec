@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>CommonASLPackage</id>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <authors>Stephen</authors>
     <owners>Stephen</owners>
     <description>Default ASL package with Common windows applications</description>

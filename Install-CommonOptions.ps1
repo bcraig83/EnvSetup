@@ -9,23 +9,33 @@ Update-ExecutionPolicy Unrestricted
 write-host $pwd	
 # Get options in the Common folder
 # Options must have ps1 extension
-$arr = Get-ChildItem .\Common\packages -filter "*.nupkg" | Foreach-Object {$_.FullName}
+#$arr = Get-ChildItem .\Common\packages -filter "*.nupkg" | Foreach-Object {$_.FullName}
+
+$arr = Get-ChildItem .\Common\packages\* -Include *.nupkg, *.ps1
+
 write-host $arr.length ' Packages found'
 # Have list of packs from above so cycle through and ask user which pack need to be installed
 
 For ($i = 0; $i -le $arr.length-1; $i++){
     Write-Host "[" $i "] " $arr[$i]
-    $packName = $arr[$i]
-	#Use this to call a script
-    #& $packName
-	
+    $packName = $arr[$i]	
 
 	#if (Install-NeededFor $packageInstallText) 
 	if (Install-NeededFor $packName) 
 	{
 		write-host 'Installing ' + $packName
 		#Use this to install a boxstarter package
-	    Install-BoxstarterPackage -PackageName $packName
+	    
+		if($packName -like '*.nupkg')
+		{
+			Write-Host 'Here in .nupkg'
+	    	#Install-BoxstarterPackage -PackageName $packName
+		}elseif($packName -like '*.ps1')
+		{
+			Write-Host 'Here in .ps1'
+			#Use this to call a script
+			#& $packName
+		}
 		
 	}else
 	{
