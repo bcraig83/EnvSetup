@@ -20,6 +20,11 @@ EXIT
 :psok
 powershell -File Install-EnvSetup.ps1
 pause
+
+:psok
+powershell -File Install-Software.ps1
+pause
+
 EXIT
 
 :nops
